@@ -50,10 +50,13 @@ class CityListTest {
     @Test
     void testShowCityName(){
         CityList cityList = mockCityList();
-        ListView cityListView = mainActivity.findViewById(R.id.city_list);
-        String cityString = cityListView.getItemAtPosition(0).toString();
-        assertEquals("Edmonton  AB", cityString);
 
+        assertEquals(2, cityList.countCities());
+
+        cityList.add(new City("Sask", "sask"));
+
+        assertEquals(2, cityList.countCities());
+        //assertTrue(cityList.hasCity(new City("Regina", "Saskatchewan")));
     }
 
     @Test

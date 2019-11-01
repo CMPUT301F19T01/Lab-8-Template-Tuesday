@@ -62,5 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public ArrayAdapter<City> returnAdpater(){
+        return cityAdapter;
+    }
+
 
 }
