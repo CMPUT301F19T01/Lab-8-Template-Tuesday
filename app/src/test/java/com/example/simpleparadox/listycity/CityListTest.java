@@ -1,6 +1,7 @@
 package com.example.simpleparadox.listycity;
 
 import android.app.Activity;
+import android.util.Log;
 import android.widget.ListView;
 
 import org.junit.jupiter.api.Test;
@@ -48,9 +49,10 @@ class CityListTest {
     // FAIL
     @Test
     void testShowCityName(){
+        CityList cityList = mockCityList();
         ListView cityListView = mainActivity.findViewById(R.id.city_list);
-        String cityString = cityListView.getItemAtPosition(1).toString();
-        assertEquals("Edmonton", cityString);
+        String cityString = cityListView.getItemAtPosition(0).toString();
+        assertEquals("Edmonton  AB", cityString);
 
     }
 
