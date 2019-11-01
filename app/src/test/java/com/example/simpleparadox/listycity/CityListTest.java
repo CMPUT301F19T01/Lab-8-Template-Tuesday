@@ -51,7 +51,7 @@ class CityListTest {
     void testShowCityName(){
         CityList cityList = mockCityList();
 
-        assertEquals(2, cityList.countCities());
+        assertEquals(1, cityList.countCities());
 
         cityList.add(new City("Sask", "sask"));
 
