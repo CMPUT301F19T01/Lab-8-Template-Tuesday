@@ -33,6 +33,10 @@ public class CityList {
         return list;
     }
 
+    public City getCity(int i){
+        return cities.get(i);
+    }
+
     /**
      * This method checks to see if a city already exists in the list
      * @param city

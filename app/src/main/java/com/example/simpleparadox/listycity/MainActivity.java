@@ -3,9 +3,12 @@ package com.example.simpleparadox.listycity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -41,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
 
         cityList.setAdapter(cityAdapter);
 
+        /*cityList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(), cityDataList.get(i).getCityName(), Toast.LENGTH_SHORT).show();
+            }
+        });*/
+
 //        dataList = new ArrayList<>();
 //        dataList.addAll(Arrays.asList(cities));
 //
@@ -50,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public ArrayAdapter<City> returnAdpater(){
+        return cityAdapter;
     }
 
 

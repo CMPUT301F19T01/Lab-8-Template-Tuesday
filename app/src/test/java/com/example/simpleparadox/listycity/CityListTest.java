@@ -1,11 +1,16 @@
 package com.example.simpleparadox.listycity;
 
+import android.app.Activity;
+import android.util.Log;
+import android.widget.ListView;
+
 import org.junit.jupiter.api.Test;
 
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CityListTest {
+    public Activity mainActivity;
 
     private CityList mockCityList() {
         CityList cityList = new CityList();
@@ -39,6 +44,19 @@ class CityListTest {
         assertThrows(IllegalArgumentException.class, () -> {
             cityList.add(city);
         });
+    }
+
+    // FAIL
+    @Test
+    void testShowCityName(){
+        CityList cityList = mockCityList();
+
+        assertEquals(1, cityList.countCities());
+
+        cityList.add(new City("Sask", "sask"));
+
+        assertEquals(2, cityList.countCities());
+        //assertTrue(cityList.hasCity(new City("Regina", "Saskatchewan")));
     }
 
     @Test
@@ -93,4 +111,5 @@ class CityListTest {
 
         assertEquals(1, cityList.countCities());
     }
+
 }
